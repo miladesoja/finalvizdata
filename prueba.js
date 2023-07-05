@@ -737,5 +737,3 @@ function handleMouseOut(d, i) {
   // Add a delay before hiding the div.
     repo[index].style.display = 'none';
 }
-
-
