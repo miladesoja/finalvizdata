@@ -9,30 +9,6 @@ mi_circle.style.backgroundColor = "white";
 
 container4.appendChild(mi_circle)
 
-// Create a new div for the button
-var buttonContainerV = document.createElement("div");
-buttonContainerV.style.display = "flex";
-buttonContainerV.style.justifyContent = "center";
-buttonContainerV.style.width = "100%"; // This will make sure the button is centered relative to the entire width of the container
-
-
-var buttonV = document.createElement("button");
-buttonV.textContent = "Next";
-buttonV.classList.add('boton')
-buttonV.id = "ButtonV"; // Add an id to your button
-
-buttonV.style.display = "block";
-buttonV.style.margin = "0 auto";
-
-// Add click event listener to scroll to section2
-buttonV.addEventListener("click", function() {
-  var container5 = document.getElementById("section-6");
-  container5.scrollIntoView({ behavior: 'smooth' });
-});
-
-// Append the button to the body
-container5.appendChild(buttonV);
-
 //////////// cancion
 
 const tu_song = document.createElement('div');
@@ -57,7 +33,7 @@ escan.classList.add('codigo');
 tu_song.appendChild(escan);
 
 container4.appendChild(tu_song);
-
+//////////////////////////
 
 
 const op1 = document.createElement('img');
@@ -395,6 +371,25 @@ falsei.addEventListener('click', () => {
   section4.scrollIntoView({ behavior: 'smooth' });
 });
 
+
+// Create the button
+var readyButtonV = document.createElement("button");
+readyButtonV.textContent = "Mirá todas las canciones!";
+readyButtonV.classList.add('readyButton');
+readyButtonV.id = "botonvecindario"; // Add an id to your button
+
+// Add the style changes
+readyButtonV.style.display = "block";
+readyButtonV.style.margin = "0 auto";
+
+// Add click event listener to scroll to the genre choosing section
+readyButtonV.addEventListener("click", function() {
+  var genreSection = document.getElementById("section-6"); // Replace "genre-section" with the id of your genre choosing section
+  genreSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Append the button to the intro container
+container4.appendChild(readyButtonV);
 
 ///////////////your song
 /*

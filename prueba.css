@@ -30,6 +30,16 @@ body {
       .site-navbar .site-logo a {
         color: #a8239f; }
   
+#vec{
+  position:relative;
+  width:500;
+}
+
+#hovereada{
+  position:relative;
+  top:-75px;
+  right:-275px
+}
 #containergraf {
     position: relative;  
     
@@ -45,8 +55,8 @@ body {
 
 #song-info {
     position: absolute; 
-    top: -130px;  
-    right: 135px;  
+    top:-27px;  
+    right: 115px;  
     display: flex;
     line-height: 0.5;
     max-width: 300px;
@@ -58,28 +68,28 @@ body {
 }
 
 
-#readyButtonV{
-
+#botonvecindario{
   background: linear-gradient(to bottom right, #861275,#10A7A0, #EDAE29 );
-    border: 0;
-    border-radius: 12px;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 2.5;
-    outline: transparent;
-    padding: 0 1rem;
-    text-align: center;
-    text-decoration: none;
-    transition: box-shadow .2s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  position:relative;
+  top:70;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
 }
 
 #readyButton{
