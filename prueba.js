@@ -9,6 +9,30 @@ mi_circle.style.backgroundColor = "white";
 
 container4.appendChild(mi_circle)
 
+// Create a new div for the button
+var buttonContainerV = document.createElement("div");
+buttonContainerV.style.display = "flex";
+buttonContainerV.style.justifyContent = "center";
+buttonContainerV.style.width = "100%"; // This will make sure the button is centered relative to the entire width of the container
+
+
+var buttonV = document.createElement("button");
+buttonV.textContent = "Next";
+buttonV.classList.add('boton')
+buttonV.id = "ButtonV"; // Add an id to your button
+
+buttonV.style.display = "block";
+buttonV.style.margin = "0 auto";
+
+// Add click event listener to scroll to section2
+buttonV.addEventListener("click", function() {
+  var container5 = document.getElementById("section-6");
+  container5.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Append the button to the body
+container5.appendChild(buttonV);
+
 //////////// cancion
 
 const tu_song = document.createElement('div');
@@ -33,7 +57,7 @@ escan.classList.add('codigo');
 tu_song.appendChild(escan);
 
 container4.appendChild(tu_song);
-//////////////////////////
+
 
 
 const op1 = document.createElement('img');
@@ -95,7 +119,7 @@ readyButton.style.margin = "0 auto";
 
 // Add click event listener to scroll to the genre choosing section
 readyButton.addEventListener("click", function() {
-  var genreSection = document.getElementById("container"); // Replace "genre-section" with the id of your genre choosing section
+  var genreSection = document.getElementById("section-1"); // Replace "genre-section" with the id of your genre choosing section
   genreSection.scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -130,7 +154,7 @@ for (let i = 0; i < circleTexts.length; i++) {
   // Add click event listener to circles
   circle.addEventListener('click', () => {
     clickedElement = circleColors[i % circleColors.length];
-    var section1 = document.getElementById("section-1");
+    var section1 = document.getElementById("section-2");
     section1.scrollIntoView({ behavior: 'smooth' });
 });
 }
@@ -170,7 +194,7 @@ img.classList.add('img-0');
 imageContainer.appendChild(img);
 img.addEventListener('click', () => {
     danza = 1;
-    var section2 = document.getElementById("section-2");
+    var section2 = document.getElementById("section-3");
     section2.scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -181,7 +205,7 @@ img1.classList.add('img-1');
 imageContainer.appendChild(img1);
 img1.addEventListener('click', () => {
   danza = 2;
-  var section2 = document.getElementById("section-2");
+  var section2 = document.getElementById("section-3");
   section2.scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -192,7 +216,7 @@ img2.classList.add('img-2');
 imageContainer.appendChild(img2);
 img2.addEventListener('click', () => {
   danza = 3;
-  var section2 = document.getElementById("section-2");
+  var section2 = document.getElementById("section-3");
   section2.scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -203,7 +227,7 @@ img3.classList.add('img-3');
 imageContainer.appendChild(img3);
 img3.addEventListener('click', () => {
   danza = 4;
-  var section2 = document.getElementById("section-2");
+  var section2 = document.getElementById("section-3");
   section2.scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -228,6 +252,7 @@ const percentage1 = document.createElement('span');
 percentage1.classList.add('percentage'); // Add class
 container3.appendChild(percentage1);
 
+
 const slider1 = document.createElement('input');
 let pop = 0;
 slider1.type = 'range';
@@ -237,6 +262,12 @@ slider1.value = sliderValue1;
 slider1.addEventListener('input', handleSliderChange1);
 slider1.classList.add('slider-pink');
 container3.appendChild(slider1);
+
+const txt = document.createElement('p');
+txt.textContent = 'Popularidad';
+txt.style.marginTop = "-20px";
+txt.style.marginBottom = "-35px";
+container3.appendChild(txt);
 
 // Bar Graph 2
 const canvas2 = document.createElement('canvas');
@@ -262,8 +293,11 @@ slider2.addEventListener('input', handleSliderChange2);
 slider2.classList.add('slider-celeste');
 container3.appendChild(slider2);
 
-let slider1Clicked = false;
-let slider2Clicked = false;
+const txt2 = document.createElement('p');
+txt2.textContent = 'Acústica';
+txt2.style.marginTop = "-20px";
+container3.appendChild(txt2);
+
 
 function handleSliderChange1(event) {
   sliderValue1 = event.target.value;
@@ -271,8 +305,6 @@ function handleSliderChange1(event) {
   console.log(pop);
   // Update the percentage value
   percentage1.textContent = `${sliderValue1}%`;
-  slider1Clicked = true;
-  checkSliders();
 }
 
 function handleSliderChange2(event) {
@@ -280,19 +312,8 @@ function handleSliderChange2(event) {
   acoust = event.target.value;
   // Update the percentage value
   percentage2.textContent = `${sliderValue2}%`;
-  slider2Clicked = true;
-  checkSliders();
 }
 
-
-function checkSliders() {
-  if (slider1Clicked && slider2Clicked) {
-    var section3 = document.getElementById("section-3");
-    section3.scrollIntoView({ behavior: 'smooth' });
-  }
-}
-
-/*
 // Create a new div for the button
 var buttonContainer = document.createElement("div");
 buttonContainer.style.display = "flex";
@@ -310,13 +331,13 @@ button.style.margin = "0 auto";
 
 // Add click event listener to scroll to section2
 button.addEventListener("click", function() {
-  var section3 = document.getElementById("section-3");
+  var section3 = document.getElementById("section-4");
   section3.scrollIntoView({ behavior: 'smooth' });
 });
 
 // Append the button to the body
 container3.appendChild(button);
-*/
+
 
 //////////explicit
 
@@ -342,7 +363,7 @@ truei.addEventListener('click', () => {
     }
     mi_circle.style.backgroundColor = clickedElement;
     tu_song.style.opacity = 1;
-    var section4 = document.getElementById("section-4");
+    var section4 = document.getElementById("section-5");
     section4.scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -370,9 +391,10 @@ falsei.addEventListener('click', () => {
   }
   mi_circle.style.backgroundColor = clickedElement;
   tu_song.style.opacity = 1;
-  var section4 = document.getElementById("section-4");
+  var section4 = document.getElementById("section-5");
   section4.scrollIntoView({ behavior: 'smooth' });
 });
+
 
 ///////////////your song
 /*
@@ -414,9 +436,7 @@ d3.csv('vizdatabase.csv', d3.autoType).then(data => {
     .append('span')
     .text('% popularidad')
 })*/
-
 ///////////////hover
-/*
 const mi_song = document.createElement('div');
 mi_song.classList.add('tu_song');
 mi_song.style.display = 'none';
@@ -628,39 +648,9 @@ art15.textContent = 'Spice Girls';
 mi_song15.appendChild(art15);
 
 const repo = [mi_song, mi_song2, mi_song3, mi_song4, mi_song5,mi_song6,mi_song7,mi_song8,mi_song9,mi_song10,mi_song11,mi_song12,mi_song13,mi_song14,mi_song15];
-
-*/
 /////////vecindario de canciones
-
-// Create a tooltip div
-const tooltip = d3.select("body")
-    .append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
-
-
 function updatePlot() {
   d3.dsv(',', 'vizdatabase.csv', d3.autoType).then(data => {
-
-    // Create the repo array
-      const repo = data.map(d => {
-      const songDiv = document.createElement('div');
-      songDiv.classList.add('tu_song');
-      songDiv.style.display = 'none';
-
-      const title = document.createElement('p');
-      title.className = 'cancion';
-      title.textContent = d.cancion; // replace 'song' with the actual column name in your CSV file
-      songDiv.appendChild(title);
-
-      const artist = document.createElement('p');
-      artist.className = 'artista';
-      artist.textContent = d.artista; // replace 'artist' with the actual column name in your CSV file
-      songDiv.appendChild(artist);
-
-      return songDiv;
-    });
-
     let chart = Plot.plot({
       width: 800,
       height: 400,
@@ -678,6 +668,15 @@ function updatePlot() {
           fill: "#000000",
           r: 4,
         }),
+        Plot.text(data, {
+          x: () => pop,
+          y: () => acoust,
+          text:["Vos!"], 
+          dy: -15,
+          dx: 0, 
+          fontSize: 14,
+          fill: "#000000"
+        })
       ],
       y:{
         domain: [0,100],
@@ -695,31 +694,28 @@ function updatePlot() {
 
     d3.select('#grafico').html(''); // Clear the previous chart
     d3.select('#grafico').append(() => chart);
-    const chartContainer = d3.select('#grafico').node();
-    repo.forEach(songDiv=>{
-      chartContainer.appendChild(songDiv);
-    });
-    /*
-    chartContainer.appendChild(mi_song);
-    chartContainer.appendChild(mi_song2);
-    chartContainer.appendChild(mi_song3);
-    chartContainer.appendChild(mi_song4);
-    chartContainer.appendChild(mi_song5);
-    chartContainer.appendChild(mi_song6);
-    chartContainer.appendChild(mi_song7);
-    chartContainer.appendChild(mi_song8);
-    chartContainer.appendChild(mi_song9);
-    chartContainer.appendChild(mi_song10);
-    chartContainer.appendChild(mi_song11);
-    chartContainer.appendChild(mi_song12);
-    chartContainer.appendChild(mi_song13);
-    chartContainer.appendChild(mi_song14);
-    chartContainer.appendChild(mi_song15);
-*/
+    //const chartContainer = d3.select('#grafico').node();
+    const songContainer = document.getElementById('song-info');
+    songContainer.appendChild(mi_song);
+    songContainer.appendChild(mi_song2);
+    songContainer.appendChild(mi_song3);
+    songContainer.appendChild(mi_song4);
+    songContainer.appendChild(mi_song5);
+    songContainer.appendChild(mi_song6);
+    songContainer.appendChild(mi_song7);
+    songContainer.appendChild(mi_song8);
+    songContainer.appendChild(mi_song9);
+    songContainer.appendChild(mi_song10);
+    songContainer.appendChild(mi_song11);
+    songContainer.appendChild(mi_song12);
+    songContainer.appendChild(mi_song13);
+    songContainer.appendChild(mi_song14);
+    songContainer.appendChild(mi_song15);
+
 
     d3.selectAll('circle')
-    .on('mouseover', (d, i) => handleMouseOver(i)) // Pass the index 'i' to handleMouseOver
-    .on('mouseout', handleMouseOut);
+      .on('mouseover', handleMouseOver)
+      .on('mouseleave', handleMouseOut);
   });
 }
 
@@ -731,52 +727,20 @@ setInterval(updatePlot, 5000);
 
 let index = 0;
 
-/*
 function handleMouseOver(d, i) {
   d3.select(this).style('opacity', 0.7);
   let j = Math.floor(Math.random() * 15);
+  const infoBox = document.getElementById('infobox');
   repo[j].style.display = 'block';
   index = j;
 
 }
 
-function handleMouseOut(d, i) {
-  repo[index].style.display = 'none';
-  d3.select(this).style('opacity', 1);
-}
-*/
 
-function handleMouseOver(d, i) {
-  d3.select(this).style('opacity', 0.7);
-
-  // Use the index or id from your data to select the correct tooltip
-  let j = d.index || d.id;
-
-
-  // Update the tooltip position and content
-  tooltip.transition()
-      .duration(200)
-      .style("opacity", .9);
-  tooltip.html(repo[j].innerHTML)
-      .style("left", (d3.event.pageX) + "px")
-      .style("top", (d3.event.pageY - 28) + "px");
-
-  // Show the tooltip
-  tooltip.style("display", "block");
-
-}
-
-// In your mouseout function
 function handleMouseOut(d, i) {
   d3.select(this).style('opacity', 1);
+  // Add a delay before hiding the div.
+    repo[index].style.display = 'none';
+}
 
 
-  // Hide the tooltip
-  tooltip.transition()
-      .duration(500)
-      .style("opacity", 0)
-      .on("end", () => {
-        // Hide the tooltip after the transition is complete
-        tooltip.style("display", "none");
-      });
-    }
